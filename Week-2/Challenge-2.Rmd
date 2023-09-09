@@ -1,0 +1,126 @@
+---
+title: "yo"
+author: "Loy Yee Keen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Exploring music preferences
+
+### A. Background
+
+Imagine that you have been hired as a data analyst by a radio station to analyze music preferences of their DJs. They have provided you with a
+dataset, playlist_data.csv , containing information about DJs, their preferred music genres, song titles, and ratings.
+Using the data-set you are required to complete some tasks that are listed subsequently. All these tasks are based on the concepts taught in the
+video lectures. The questions may not be entirely covered in the lectures; To complete them, you are encouraged to use Google and the
+resources therein.
+
+### B.Tasks
+
+Task-1
+In the lecture, we used two data-sets, starwars and anscombe's quartet that were readily available with the packages, tidyverse and Tmisc , respectively. When we have to use custom-made data-sets or the ones like we downloaded from Canvas, we have to import it using the R commands before using them. All the questions below are related to this task.
+
+Question 1.1: What does the term “CSV” in playlist_data.csv stand for, and why is it a popular format for storing tabular data?
+
+Solution: **CSV stands for 'Comma Separated Value' and it is popular as it is a simple and universal format that can be easily read and written by many programs and tools.**
+
+Question 1.2: load the tidyverse package to work with .csv files in R.
+Solution: install.packages('tidyverse')
+# Load the necessary package to work with CSV files in R.
+Question 1.3: Import the data-set, playlist_data.csv
+Solution:
+# Import the "playlist_data.csv" dataset into R
+read_csv("playlist_data.csv",eval=TRUE)
+Question 1.4: Assign the data-set to a variable, playlist_data
+Solution:
+# Assign the variable to a dataset
+insert_name_of_variable <- read_csv("playlist_data.csv")
+From now on, you can use the name of the variable to view the contents of the data-set
+Question 1.5: Get more information about read_csv() command and provide a screenshot of the information displayed in the “Help” tab of
+the “Files” pane
+Solution:
+# More information about the R command, complete the code
+read_csv()
+knitr::include_graphics("name_of_the_file_with_extension")
+Question 1.6: What does the skip argument in the read_csv() function do?
+Solution: Delete this text and insert your answer here
+Question 1.7: Display the contents of the data-set
+Solution:
+# Type the name of the variable, to see what it contains
+Question 1.8: Assume you have a CSV file named sales_data.csv containing information about sales transactions. How would you use the
+read_csv() function to import this file into R and store it in a variable named sales_data ?
+Solution:
+# No output is required for this code
+# Only the list of commands that execute the task mentioned in the question are required
+Task-2
+After learning to import a data-set, let us explore the contents of the data-set through the following questions
+Question 2.1: Display the first few rows of the data-set to get an overview of its structure
+Solution:
+# Type the name of the variable we assigned the data-set to
+head(name_of_the_variable)
+Question 2.2: Display all the columns of the variable stacked one below another
+Solution:
+# Stack columns of playlist_data
+Question 2.3: How many columns are there in the dataset?
+Solution:
+# Number of columns
+Question 2.4: What is the total count of DJs?
+Solution:
+# Number of DJs
+Question 2.5: Display all the location of all the DJs
+Solution:
+# Location of DJs
+Question 2.6: Display the age of the DJs
+Solution:
+# Age of DJs
+Task-3
+Let us plot the data to get more insights about the DJs.
+Question 3.1: Create a plot to visualize the relationship between DJs’ ages and their ratings.
+Solution:
+# complete the code to generate the plot
+ggplot(name_of_the_variable)
+aes(x=column_name,y=column_name)
+Question 3.2: Label the x-axis as “Age” and the y-axis as “Rating.”
+Solution:
+# complete the code to generate the plot
+ggplot(name_of_the_variable)
+aes(x=column_name,y=column_name)
+Question 3.3: Represent data using points
+Solution:
+# complete the code to generate the plot
+ggplot(name_of_the_variable)
+aes(x=column_name,y=column_name)
+Question 3.4: Can you change the points represented by dots/small circles to any other shape of your liking?
+Solution:
+# complete the code to generate the plot
+ggplot(name_of_the_variable)
+aes(x=column_name,y=column_name)
+geom_point( ) # <-- Hint: Use ? to learn more about geom_point and use appropriate values for shape
+Question 3.5: Insert a suitable title and briefly provide your insights in the caption
+Solution:
+# complete the code to generate the plot
+ggplot(name_of_the_variable)
+aes(x=column_name,y=column_name)
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

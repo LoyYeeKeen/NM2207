@@ -1,0 +1,27 @@
+{
+    "id": "3A40918A",
+    "path": "~/NM2207/Week-1/hello.Rmd",
+    "project_path": "hello.Rmd",
+    "type": "r_markdown",
+    "hash": "2517324673",
+    "contents": "",
+    "dirty": false,
+    "created": 1692342840823.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "11,11",
+        "scrollLine": "4"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1692342864,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1692342864283,
+    "read_only": false,
+    "read_only_alternatives": []
+}

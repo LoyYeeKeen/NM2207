@@ -1,0 +1,23 @@
+---
+title: "Challenge 1"
+author: "Loy Yee Keen"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About Me
+
+Hello, I am Yee Keen. I don't have a picture of myself so here's random dinosaur.
+
+```{r, out.height= "350px",out.width= "800px",echo=FALSE,eval=TRUE,fig.cap="dinosaur"}
+knitr::include_graphics('download.jpg') 
+```
+```{r, out.height= "350px",out.width= "300px",echo=FALSE,eval=TRUE,fig.cap="screenshot"}
+knitr::include_graphics('screenshot.png') 
+```
