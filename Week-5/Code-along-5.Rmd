@@ -91,7 +91,10 @@ sample_tibble <- tibble(sample_sizes =
 c(100, 300, 3000))
 #using rowwise groups the data by row,
 # allowing calc_sample_mean
-?
+sample_tibble %>%
+group_by(sample_sizes) %>%
+mutate(sample_means =
+ calc_sample_mean(sample_sizes))
 ```
 <br>
 

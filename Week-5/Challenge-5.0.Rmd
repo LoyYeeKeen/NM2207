@@ -1,10 +1,8 @@
 ---
 title: "Challenge-5"
-author: "Loy Yee Keen"
+author: "Insert your name here"
 date: "`r Sys.Date()`"
-output:
-  pdf_document: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -23,10 +21,9 @@ Create an R function that defines a global variable called `x` with a value of 5
 ```{r, eval=TRUE,echo=TRUE}
 # Enter code here
 x<-5
-local_variable<-function(x){
-  x<-10}
+local<-function(x){x<-5}
 x
-print(local_variable(x))
+print(local(x))
 ```
 <br>
 
@@ -39,12 +36,10 @@ Create an R function that takes an argument and adds it to a global variable cal
 ```{r, eval=TRUE,echo=TRUE}
 # Enter code here
 total<-10
-add_to_total<-function(x){
- total<-total+x
-  return(total)}
-total<-add_to_total(5)
-total<-add_to_total(10)
-total<-add_to_total(15)
+add<-function(x){
+  x+total}
+total<-add(10)
+total<-add(20)
 total
 ```
 <br>
@@ -58,12 +53,12 @@ Write an R program that includes a global variable `total` with an initial value
 ```{r, eval=TRUE,echo=TRUE}
 # Enter code here
 total<-100
-new_total<-function(x){
+add<-function(x){
   total<<-total+x
-  return(total)}
-new_total(5)
-new_total(10)
-new_total(30)
+}
+add(10)
+add(20)
+total
 ```
 <br>
 
@@ -77,12 +72,11 @@ Define a function `outer_function` that declares a local variable `x` with a val
 # Enter code here
 outer_function<-function(x){
   x<-5
-  inner_function<-function(){
+  inner_function<-function(y){
     print(x)}
-  return(inner_function())}
-
+  return(inner_function(y))
+}
 outer_function(x)
-
 ```
 <br>
 
@@ -95,12 +89,11 @@ Create a function that takes a text input and generates a humorous meme with the
 ```{r, eval=TRUE,echo=TRUE}
 # Enter code here
 library('magick')
-create_meme<-function(meme_text){
-frink <- image_read("https://jeroen.github.io/images/frink.png")
-  image_with_text<-image_annotate(frink, meme_text, size = 30,color = "green")
-  return(image_with_text)}
-create_meme("Hello")
-
+meme<-function(text){
+  frink<-image_read('frink.png')
+  create_meme<-image_annotate(frink,text)
+return(create_meme)}
+meme('hello')
 ```
 <br>
 
@@ -112,21 +105,12 @@ Develop a text analysis game in which the user inputs a sentence, and the R func
 
 ```{r, eval=TRUE,echo=TRUE}
 # Enter code here
-text_analysis_game <- function() {
+game<-function(sentence){
   sentence<-readline("Enter a sentence: ")
-  number_of_words <- length(strsplit(sentence, ' '))
-  number_of_characters <- nchar(sentence)
-  average_word_length <- mean(number_of_characters /number_of_words)
-  communication_skill_level<-ifelse(number_of_words & number_of_characters & average_word_length >= 10,
-                                    "Good!","Poor!")
-  print(paste0("Communication skill level: ", communication_skill_level, " Your sentence has ", 
-               number_of_words, " words, ", 
-               number_of_characters, " characters and your sentence's average word length is ", 
-               average_word_length))
-}
-
-text_analysis_game()
-
-
+  number_of_words<-length(strsplit(sentence,' '))
+  number_of_characters<-nchar(sentence)
+  number_of_characters<-mean(number_of_characters/number_of_words)
+  return (paste0("Your Communication Level Skill is", number_of_words,number_of_characters, number_of_characters))}
+game(sentence)
 ```
 <br>

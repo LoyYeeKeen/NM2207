@@ -1,10 +1,8 @@
 ---
 title: "Challenge-4"
-author: "Loy Yee Keen"
+author: "Insert your name here"
 date: "`r Sys.Date()`"
-output:
-  html_document: default
-  pdf_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -28,11 +26,8 @@ font-style: italic;
 
 Load the "CommQuest2023.csv" dataset using the `read_csv()` command and assign it to a variable named "comm_data." 
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-library('tidyverse')
-library('dplyr')
-comm_data<-read_csv("CommQuest2023_Larger.csv")
 ```
 <br>
 
@@ -43,10 +38,8 @@ Using the select command, create a new dataframe containing only the "date," "ch
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>% 
-  select(date,channel,message)
 ```
 <br>
 
@@ -56,11 +49,8 @@ Use the filter command to create a new dataframe that includes messages sent thr
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  select(date,channel) %>%
-  filter(date=="2023-08-02",channel=="Twitter")
 ```
 <br>
 
@@ -70,10 +60,8 @@ Utilizing the arrange command, arrange the "comm_data" dataframe in ascending or
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  arrange(date)
 ```
 <br>
 
@@ -83,10 +71,8 @@ Apply the distinct command to find the unique senders in the "comm_data" datafra
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  distinct(sender)
 ```
 <br>
 
@@ -96,11 +82,8 @@ Employ the count and group_by commands to generate a summary table that shows th
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  group_by(sender) %>%
-  count(sender)
 ```
 <br>
 
@@ -110,11 +93,8 @@ Using the group_by and count commands, create a summary table that displays the 
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  group_by(channel) %>%
-  count(channel)
 ```
 <br>
 
@@ -124,15 +104,8 @@ Utilize the filter, select, and arrange commands to identify the top three sende
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  group_by(sender) %>%
-  summarise(average_sentiment=mean(sentiment)) %>%
-  arrange(desc(average_sentiment)) %>%
-  slice(1:3)
-
-#filter positive sentiment
 ```
 <br>
 
@@ -142,12 +115,8 @@ With the group_by, summarise, and arrange commands, calculate the average sentim
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  group_by(date) %>%
-  summarise(average_sentiment=mean(sentiment)) %>%
-  arrange(date)
 ```
 <br>
 
@@ -157,11 +126,8 @@ Use the filter and select commands to extract messages with a negative sentiment
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  select(message,sentiment) %>%
-  filter(sentiment<0)
 ```
 <br>
 
@@ -171,14 +137,8 @@ Apply the mutate command to add a new column to the "comm_data" dataframe, repre
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>% 
-  mutate(sentiment_label=ifelse(sentiment>0,"Positive",
-         ifelse(sentiment==0,"Neutral","Negative")))
-      
-     
-    
 ```
 <br>
 
@@ -188,11 +148,8 @@ Create a new dataframe using the mutate and arrange commands that calculates the
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-comm_data %>%
-  mutate(product=sentiment*nchar(message)) %>%
-  arrange(desc(product))
 ```
 <br>
 
@@ -202,19 +159,8 @@ Use the group_by, summarise, and arrange commands to find the day with the highe
 
 **Solution:**
 
-```{r, eval=TRUE,echo=TRUE}
+```{r, eval=FALSE,echo=TRUE}
 # Enter code here
-hello<-comm_data %>%
-  group_by(date) %>%
-  summarise(total_characters=sum(nchar(message)))%>%
-  arrange(desc(total_characters)) 
-hello[1:1,1:2]
-
-comm_data %>%
-  group_by(date) %>%
-  summarise(total_characters=sum(nchar(message)))%>%
-  arrange(desc(total_characters)) %>%
-  slice(1)
 ```
 <br>
 
@@ -222,5 +168,4 @@ comm_data %>%
 
 Can you list at least two reasons why the dataset illustrated in slide 10 is non-tidy? How can it be made Tidy?
 
-**Solution:** 1. There are multiple variables (year, event) in the same column. Put these variables in separate columns.
-2. In the Percentage column, the 2nd, 10th, 13th, 18th and 21st rows have data corresponding to a different variable. We should create a new column for these data.
+**Solution:** _Insert your answer here_

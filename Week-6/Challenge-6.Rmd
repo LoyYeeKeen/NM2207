@@ -1,8 +1,10 @@
 ---
 title: "Challenge-6"
-author: "Insert your name here"
+author: "Loy Yee Keen"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -20,19 +22,26 @@ Create a program that simulates a rocket launch countdown using a while loop. St
 
 **Output preview:** Here is how the countdown could look like 
 
-```{r, out.height= "20px",out.width= "200px",echo=FALSE}
-knitr::include_graphics("images/countdown.png")
-```
-
-```{r, out.height= "20px",out.width= "200px",echo=FALSE}
-knitr::include_graphics("images/blastoff.png")
-```
-
 **Solutions:**
 
 ```{r, eval=T,echo=TRUE}
 # Enter code here
 
+i <- 10
+
+while (i >= 0) {
+  if (i == 10) {
+    cat("10\n")
+  } else if (i == 0) {
+    cat("Blastoff!\n")
+  } else {
+    cat(i, "\n")
+  }
+  Sys.sleep(1)  
+  i <- i - 1
+}
+
+      
 ```
 <br>
 
@@ -46,6 +55,18 @@ Develop a program that takes a user-entered word and uses a while loop to print 
 
 ```{r, eval=T,echo=TRUE}
 # Enter code here
+
+word <- readline("Enter a word: ")
+
+i <- nchar(word)
+reversed_word <- character(1)
+while (i > 0) {
+  char <- substr(word, i, i)
+  reversed_word <- paste0(reversed_word, char, sep = "")
+  i <- i - 1
+}
+
+cat("Reversed word:", reversed_word, "\n")
 
 ```
 <br>

@@ -32,7 +32,7 @@ library('dplyr')
 
 ```{r, eval=TRUE,echo=TRUE}
 # Read data from the hotels.csv file and assign it to a variable named, "hotels"
-hotels<-read.csv('hotels.csv')
+hotels<-read_csv('hotels.csv')
 ```
 
 ### 3. List names of the variables in the data-set (Slide #19)
