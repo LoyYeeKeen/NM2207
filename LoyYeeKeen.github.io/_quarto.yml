@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: doc
+
+website:
+  title: "LoyYeeKeen.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About Me
+      - href: courses.qmd
+        text: Courses Taken
+      - href: folders.qmd
+        text: NM2207 Folders
+      - href: finalproj.qmd
+        text: NM2207 Final Project
+
+format:
+  html:
+    theme: sketchy
+    css: styles.css
+    toc: true
+
+editor: visual
+
