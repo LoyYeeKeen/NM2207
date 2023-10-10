@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hello!",
+    "section": "",
+    "text": "```html"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello! I am Loy Yee Keen, a Year 2 student majoring in Psychology!"
+  },
+  {
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses Taken",
+    "section": "",
+    "text": "PL1101E: Introduction to Psychology\nCL1101E: Chinese Language: Its Past and Present\nHSS1000: Understanding Social Complexity\nHSA1000: Asian Interconnections\nDTK1234: Design Thinking\nPL2131: Research and Statistical Methods I\nEL1101E: The Nature of Language\nFAS1101: Writing Academically: Arts and Social Sciences\nHSH1000: The Human Condition\nHSI1000: How Science Works, Why Science Works\nST1131: Introduction to Statistics and Statistical Computing\nNM2207: Computational Media Literacy\nPL3102: Cognitive Psychology\nPL3103: Biological Psychology\nEL2102: Sound Patterns in Language\nTRA2101: Basic Translation\nHSI2013: The Science of Music"
+  },
+  {
+    "objectID": "courses.html#quarto",
+    "href": "courses.html#quarto",
+    "title": "Courses Taken",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "courses.html#running-code",
+    "href": "courses.html#running-code",
+    "title": "Courses Taken",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "finalproj.html",
+    "href": "finalproj.html",
+    "title": "NM2207 Final Project",
+    "section": "",
+    "text": "hello"
+  },
+  {
+    "objectID": "folders.html",
+    "href": "folders.html",
+    "title": "NM2207 Folders",
+    "section": "",
+    "text": "Here’s the link to all my NM2207 folders on GitHub!"
+  }
+]
