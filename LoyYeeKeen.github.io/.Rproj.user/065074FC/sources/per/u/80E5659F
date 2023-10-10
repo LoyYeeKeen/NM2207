@@ -1,0 +1,32 @@
+{
+    "id": "80E5659F",
+    "path": null,
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "2456495401",
+    "contents": "",
+    "dirty": true,
+    "created": 1696483477574.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled2",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8295751972865469298,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696486281750,
+    "read_only": false,
+    "read_only_alternatives": []
+}
