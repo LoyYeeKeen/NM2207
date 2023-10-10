@@ -1,0 +1,14 @@
+{
+  "hash": "77739f79bf7f4139ea2b1337dbae9882",
+  "result": {
+    "markdown": "---\ntitle: \"Hello!\"\noutput:\n  quarto::quarto_html:\n    self_contained: true\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::include_graphics(\"dino.png\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
