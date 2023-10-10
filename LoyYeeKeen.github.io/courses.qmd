@@ -1,0 +1,36 @@
+---
+title: "Courses Taken"
+---
+PL1101E: Introduction to Psychology
+
+CL1101E: Chinese Language: Its Past and Present
+
+HSS1000: Understanding Social Complexity
+
+HSA1000: Asian Interconnections
+
+DTK1234: Design Thinking
+
+PL2131: Research and Statistical Methods I
+
+EL1101E: The Nature of Language
+
+FAS1101: Writing Academically: Arts and Social Sciences
+
+HSH1000: The Human Condition
+
+HSI1000: How Science Works, Why Science Works
+
+ST1131: Introduction to Statistics and Statistical Computing
+
+NM2207: Computational Media Literacy
+
+PL3102: Cognitive Psychology
+
+PL3103: Biological Psychology
+
+EL2102: Sound Patterns in Language
+
+TRA2101: Basic Translation
+
+HSI2013: The Science of Music
