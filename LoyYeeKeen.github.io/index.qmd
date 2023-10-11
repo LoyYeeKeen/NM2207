@@ -1,9 +1,0 @@
----
-title: "Welcome to My Page!"
-output:
-  quarto::quarto_html:
-    self_contained: true
----
-
-<img src="dino.png" alt="Hello!" title="Dino" style="width:100%">
-

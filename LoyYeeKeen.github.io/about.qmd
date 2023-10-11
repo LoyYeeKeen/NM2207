@@ -1,8 +1,0 @@
----
-title: "About Me"
----
-
-Hello! I am Loy Yee Keen, a Year 2 student majoring in Psychology! 
-
-<img src="dino.png" alt="Hello!" title="Dino" style="width:500px">
-

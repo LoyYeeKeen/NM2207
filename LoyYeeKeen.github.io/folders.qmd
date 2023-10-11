@@ -1,6 +1,0 @@
----
-title: "NM2207 Folders"
----
-
-Here's the <a href="https://github.com/LoyYeeKeen/NM2207">*link*</a> to all my NM2207 folders on GitHub!
-

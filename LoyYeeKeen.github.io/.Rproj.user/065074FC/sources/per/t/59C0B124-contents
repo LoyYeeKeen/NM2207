@@ -1,9 +1,0 @@
----
-title: "Hello!"
-output:
-  quarto::quarto_html:
-    self_contained: true
----
-
-```{![Hello!](dino.png "Dino")}
-```
