@@ -1,0 +1,12 @@
+---
+title: "CodeAlong8"
+author: "Loy Yee Keen"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r, out.height= "500px",out.width= "500px",echo=FALSE,eval=TRUE,fig.cap="screenshot"}
+knitr::include_graphics('screenshot.png') 
+```

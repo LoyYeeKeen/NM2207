@@ -6,7 +6,7 @@ output: pdf_document
 ---
 
 ### (1) What is the topic that you have finalised? (Answer in 1 or 2 sentences).
-Are American parents giving their children more gender-neutral names?
+The topic that I have finalised is "Names", specifically the names that parents give their babies.
 
 ### (2) What are the data sources that you have curated so far? (Answer 1 or 2 sentences).
-List of names given to babies born in the US each year, the gender of the babies, and the count of each name. The data sources span from the years 1880 to 2022, but I might not use the data for all years, maybe just in the last 50 years. This dataset is found from the website of the United States Social Security Administration, an independent agency of the U.S. federal government.
+I have curated a dataset consisting of a list of names given to babies born in the US each year, the gender of the babies, and the count of each name per gender. The data sources span from the years 1880 to 2022. These data sources are extracted from the website of the United States Social Security Administration, an independent agency of the U.S. federal government.
