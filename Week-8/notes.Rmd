@@ -1,0 +1,22 @@
+---
+title: "Code-Along-8"
+author: "Loy Yee Keen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,eval=T}
+library('shiny')
+?runExample()
+runExample()
+runExample("01_hello")
+?fluidPage() #find other bar layouts
+?sliderInput() #find arguments of this function
+#create R script file in folder called app
+runApp("app",display.mode="showcase") #displaymode to show the code
+#strong, em, br (follow css)
+```
