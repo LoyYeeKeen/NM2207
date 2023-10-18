@@ -46,6 +46,6 @@ Every row and column of the datasets will be used to answer my chosen question a
 
 ### (4) Challenges and errors that you faced and how you overcame them.
 
-I encountered difficulties when attempting to convert the original datasets, which were in text files, into CSV format. In order to address this issue, I conducted online research to find a suitable conversion technique and followed the instructions provided.
+(got teach in lecture! u go see the site have or not) I encountered difficulties when attempting to convert the original datasets, which were in text files, into CSV format. In order to address this issue, I conducted online research to find a suitable conversion technique and followed the instructions provided.
 
-Nonetheless, a problem arose because the original text files did not include column titles. Consequently, the CSV output assigned the column names based on the data present in the first row of each respective column. This approach was erroneous, as the data in the first row represented observations, not variables. To resolve this issue, I conducted further online research to discover how to convert text files without column titles into CSV format.
+Nonetheless, a problem arose because the original text files did not include column titles. Consequently, the CSV output assigned the column names based on the first value in each cell of the respective columns. This approach was erroneous, as the data in the first row represented observations, not variables. To resolve this issue, I conducted further online research to discover how to convert text files without column titles into CSV format.
