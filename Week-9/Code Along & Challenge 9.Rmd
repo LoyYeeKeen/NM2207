@@ -1,0 +1,178 @@
+---
+title: "Challenge-9"
+author: "Loy Yee Keen"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+```{r}
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=80), tidy=TRUE)
+```
+#Code Along
+```{r, eval=TRUE}
+library(tidyverse) #load tidyverse package
+#create a dataframe, tidydata, with values manually keyed into the tribble function
+tidydata <- tribble(
+~country, ~year, ~cases, ~population,
+"Afghanistan", 1999, 745, 19987071,
+"Afghanistan", 2000, 2666, 20595360,
+"Brazil", 1999, 37737, 172006362,
+"Brazil", 2000, 80488, 174504898,
+"China", 1999, 212258, 1272915272,
+"China", 2000, 213766, 1280428583)
+tidydata
+```
+
+```{r, eval=TRUE}
+#create a dataframe, nontidydata, with values manually keyed into the tribble function
+nontidydata <- tribble(
+~country,~year,~rate,
+"Afghanistan", 1999, "745/19987071",
+"Afghanistan", 2000, "2666/20595360",
+"Brazil", 1999, "37737/172006362",
+"Brazil", 2000, "80488/174504898",
+"China", 1999, "212258/1272915272",
+"China", 2000, "213766/1280428583")
+nontidydata
+```
+
+```{r,eval=TRUE}
+#separate the column rate into 2 columns--cases and population
+tidieddata <- nontidydata %>%
+separate(rate, into = c("cases",
+"population"),
+sep = "/")
+tidieddata
+```
+```{r, eval=TRUE}
+# Assign the column names of all the columns from cases to population as the values of a 
+#new column called measurement. 
+#Assign the values of all the columns from cases to population into a new column called value
+newtidieddata <- tidieddata %>%
+pivot_longer(
+cols = cases:population,
+names_to = "measurement",
+values_to = "value"
+)
+newtidieddata
+```
+
+```{r, eval=TRUE}
+# create a new dataframe, df, with the values manually keyed into the function tribble
+df <- tribble(
+~id, ~bp1, ~bp2,
+"A", 100, 120,
+"B", 140, 115,
+"C", 120, 125
+)
+df
+```
+
+```{r, eval=TRUE}
+# Assign the column names of all the columns from bp1 to bp2 as the values of a 
+#new column called measurement. 
+# Assign the values of all the columns from bp1 to bp2 into a new column called value
+df %>%
+pivot_longer(
+cols = bp1:bp2,
+names_to = "measurement",
+values_to = "value"
+)
+```
+
+```{r, eval=TRUE}
+#Create new columns based on the values of the column "measurement"
+#Assign to these columns the values from the column "value"
+newtidieddata %>%
+pivot_wider(names_from="measurement",
+values_from="value")
+```
+
+```{r, eval=TRUE}
+#Create a dataframe, df, with values manually keyed into the tribble function
+df <- tribble(
+~id, ~measurement, ~value,
+"A", "bp1", 100,
+"B", "bp1", 140,
+"B", "bp2", 115,
+"A", "bp2", 120,
+"A", "bp3", 105
+)
+df
+```
+
+```{r, eval=TRUE}
+#Create new columns based on the values of the column "measurement"
+#Assign to these columns the values from the column "value"
+df %>%
+pivot_wider(
+names_from = measurement,
+values_from = value
+)
+```
+
+#Challenge
+In your console, type, billboard
+A.	It will open a dataset where each observation/row is a song
+B.	Columns wk1-wk76 have the rank of the songs in that week
+```{r,eval=TRUE}
+library(tidyverse)
+billboard
+```
+Pivot longer to arrange the names of the columns, wk1 to wk76 under a new variable/column week (Hint use: cols = starts_with("wk") as the argument to pivot_longer() )
+
+```{r, eval=TRUE}
+billboard %>% pivot_longer(
+  cols=starts_with("wk"),
+  names_to="week",
+  values_to="rank"
+  )
+```
+Clean the data by removing observations/rows with entries NA (Use: values_drop_na = TRUE in pivot longer)
+```{r, eval=TRUE}
+billboard %>% pivot_longer(
+  cols=starts_with("wk"),
+  names_to="week",
+  values_to="rank",
+  values_drop_na = TRUE
+  )
+```
+Ensure that the column, week, has only the number of the week, 1 for wk1, 2 for wk2 and so on. (Use: mutate(week = parse_number(week)))
+```{r,eval=TRUE}
+billboard %>% pivot_longer(
+  cols=starts_with("wk"),
+  names_to="week",
+  values_to="rank",
+  values_drop_na = TRUE) %>% 
+  mutate(week = parse_number(week)
+         )
+```
+Plot the rank along y axis and week along x axis and join the data points using geom_line()
+```{r, eval=TRUE}
+library(ggplot2)
+billboard<-billboard %>% pivot_longer(cols=starts_with("wk"),
+names_to="week",values_to="rank",
+values_drop_na = TRUE) %>% 
+  mutate(week = parse_number(week)
+         )
+ggplot(data=billboard)+
+  aes(x=week,y=rank,group=track)+
+  geom_line()
+```
+In your console, type cms_patient_experience
+A.	A dataset from the Centers of Medicare and Medicaid services that collects data about patient experiences
+B.	The core unit being studied is an organization, but each organization is spread across six rows, with one row for each measurement taken in the survey organization
+```{r,eval=TRUE}
+cms_patient_experience
+```
+Using pivot_wider(), create as many columns as the distinct entries of the variable, measure_cd. The values in the columns should correspond to the ones listed in the column, prf_rate
+```{r, eval=TRUE}
+cms_patient_experience %>% pivot_wider(names_from="measure_cd",values_from = "prf_rate")
+```
+The output doesn’t look quite right; we still seem to have multiple rows for each organization. That’s because, we also need to tell pivot_wider() which column or columns have values that uniquely identify each row; in this case those are the variables starting with "org"
+To your answer to the previous step, include, id_cols = starts_with("org"), as an argument to the function, pivot_wider. Now you will be able to see the id of each organisation, the corresponding name and the metrics
+```{r, eval=TRUE}
+cms_patient_experience %>% pivot_wider(names_from="measure_cd",
+                                       values_from = "prf_rate",
+                                       id_cols = starts_with("org")
+                                       )
+```
