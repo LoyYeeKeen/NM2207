@@ -7,7 +7,7 @@ output: pdf_document
 # Week 9
 
 ### (1) What is the topic that you have finalised? (Answer in 1 or 2 sentences).
-The topic that I have finalised is "Names", specifically "Are American parents picking more gender-neutral names for their children?"
+The topic that I have finalised is "Names", specifically "Is there a rise in the gender-neutral names given to babies born in America?"
 
 ### (2) What are the data sources that you have curated so far? (Answer 1 or 2 sentences).
 I have curated a dataset consisting of a list of names given to babies born in the US each year, the gender of the babies, and the count of each name per gender. The data sources span from the years 1880 to 2022. These data sources are extracted from the website of the United States Social Security Administration, an independent agency of the U.S. federal government.
@@ -16,7 +16,7 @@ I have curated a dataset consisting of a list of names given to babies born in t
 
 ### (1) What is the question that you are going to answer? (Answer: One sentence that ends with a question mark that could act like the title of your data story),
 
-Are American parents picking more gender-neutral names for their children?
+Is there a rise in the gender-neutral names given to babies born in America?
 
 ### (2) Why is this an important question? (Answer: 3 sentences, each of which has some evidence, e.g., “According to the United Nations...” to justify why the question you have chosen is important)
 
@@ -34,18 +34,20 @@ Additonally, gender-neutral names empower girls and women by challenging gender 
 
 This trend aligns with the United Nations' Sustainable Development Goal 5, which aims to achieve gender equality and empower women and girls.
 
-*Source: <https://sdgs.un.org/goals/goal5)](https://sdgs.un.org/goals/goal5>*
+*Source: <https://sdgs.un.org/goals/goal5>*
 
 ### (3) Which rows and columns of the dataset will be used to answer this question? (Answer: Actual names of the variables in the dataset that you plan to use).
 
-I will use multiple datasets to answer the chosen question. 
+I will use multiple datasets to answer the chosen question. All the datasets have the same format; each dataset represents a specific year spanning from 1882 to 2022. 
 
-Each dataset represents a specific year spanning from 1882 to 2022. In each dataset, there are 3 columns, corresponding to the name of the baby, the gender of the baby and the count of babies with that name and gender (The original dataset did not define the names of the variables, so I will redefine the variables as Name, Gender and Count). The number of rows, each corresponding to the observation for each name, differ for each year. 
+In each dataset, there are 3 columns, corresponding to the name of the baby, the gender of the baby and the count of babies with that name and gender (The original dataset did not define the names of the variables, so I will redefine the variables as Name, Gender and Count). 
+
+The number of rows, each corresponding to the observation for each name, differ for every year. 
 
 Every row and column of the datasets will be used to answer my chosen question as all of them are relevant in comparing the shifts in naming trends over the years.
 
+I will use rbind to combine the datasets into a single dataset.
+
 ### (4) Challenges and errors that you faced and how you overcame them.
 
-(got teach in lecture! u go see the site have or not) I encountered difficulties when attempting to convert the original datasets, which were in text files, into CSV format. In order to address this issue, I conducted online research to find a suitable conversion technique and followed the instructions provided.
-
-Nonetheless, a problem arose because the original text files did not include column titles. Consequently, the CSV output assigned the column names based on the first value in each cell of the respective columns. This approach was erroneous, as the data in the first row represented observations, not variables. To resolve this issue, I conducted further online research to discover how to convert text files without column titles into CSV format.
+I encountered difficulties when I read the files using read_csv because the datasets did not have column names. Consequently, the output assigned the first value in each cell of the respective columns as the column names. This approach was erroneous, as the data in the first row represented observations, not variables. To resolve this issue, I tried to look up the answer in the textbook reading (<https://r4ds.hadley.nz/data-import>) provided in the Lecture 9 slides.
