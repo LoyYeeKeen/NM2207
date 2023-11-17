@@ -1,0 +1,9 @@
+---
+title: "Challenge-11"
+output: html_document
+date: "2023-11-01"
+---
+
+```{r, out.height= "350px",out.width="800px",echo=TRUE,eval=TRUE,fig.cap="Replace text here with the caption"}
+knitr::include_graphics("Screenshot.png") 
+```
