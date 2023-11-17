@@ -7,9 +7,7 @@ output:
   html_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 # Week 9
 
@@ -86,12 +84,97 @@ III. Features:
 
 ##### **(3) What concepts incorporated in your project were taught in the course and which ones were self-learnt?** 
 
-```{r, eval=TRUE, echo=FALSE}
-library(readxl)
-library(dplyr)
-data <- read_excel("C:\\Users\\Windows\\Documents\\GitHub\\NM2207\\Week-11\\week11.xlsx")
-data <- data %>% arrange(Week)
-print(data,n=61)
+
+```
+## Warning: package 'readxl' was built under R version 4.2.3
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.2.3
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```
+## # A tibble: 61 x 2
+##    Topic                                                    Week 
+##    <chr>                                                    <chr>
+##  1 library                                                  2    
+##  2 pull                                                     2    
+##  3 logical operators (==, &, <, >)                          2 & 4
+##  4 ggplot                                                   2 & 7
+##  5 as.integer                                               3    
+##  6 as.character                                             3    
+##  7 vector('list', length=)                                  3    
+##  8 list[['']]                                               3    
+##  9 c()                                                      3    
+## 10 read_csv                                                 3    
+## 11 $                                                        3    
+## 12 filter                                                   4    
+## 13 select                                                   4    
+## 14 mutate                                                   4    
+## 15 arrange(desc())                                          4    
+## 16 seq(from=, to=, by=)                                     4    
+## 17 slice                                                    4    
+## 18 : eg 1:5                                                 4    
+## 19 ifelse                                                   4    
+## 20 functions                                                5    
+## 21 paste0                                                   5    
+## 22 for loop                                                 6    
+## 23 aes(group=)                                              7    
+## 24 aes(colour=)                                             7    
+## 25 geom_col(fill=)                                          7    
+## 26 geom_col(alpha=)                                         7    
+## 27 guides()                                                 7    
+## 28 facet_wrap(~)                                            8    
+## 29 shiny                                                    8    
+## 30 sliderInput                                              8    
+## 31 unlist                                                   <NA> 
+## 32 abs                                                      <NA> 
+## 33 scales = 'free_y'                                        <NA> 
+## 34 geom_line                                                <NA> 
+## 35 read_csv(col_names=)                                     <NA> 
+## 36 merge                                                    <NA> 
+## 37 data.frame                                               <NA> 
+## 38 rbind                                                    <NA> 
+## 39 bind_rows                                                <NA> 
+## 40 do.call                                                  <NA> 
+## 41 css                                                      <NA> 
+## 42 is.null                                                  <NA> 
+## 43 reactiveVal                                              <NA> 
+## 44 observeEvent                                             <NA> 
+## 45 plotly                                                   <NA> 
+## 46 DT package                                               <NA> 
+## 47 scale_colour_manual                                      <NA> 
+## 48 guide_legend(title = NULL)                               <NA> 
+## 49 geom_col                                                 <NA> 
+## 50 as.double(digits=2)                                      <NA> 
+## 51 scale_x_continuous/scale_y_continuous（limits=, breaks=) <NA> 
+## 52 radioButtons                                             <NA> 
+## 53 numericInput                                             <NA> 
+## 54 actionButton                                             <NA> 
+## 55 div                                                      <NA> 
+## 56 tabs                                                     <NA> 
+## 57 switch                                                   <NA> 
+## 58 min                                                      <NA> 
+## 59 max                                                      <NA> 
+## 60 backticks                                                <NA> 
+## 61 sum                                                      <NA>
 ```
 
 ###### **Explanations for some of the functions I used are as follows:**
@@ -117,7 +200,8 @@ function to merge the dataframes for male and female into one dataframe called g
 function to read dataset for each year (see paste0 function below)
 
 **paste0():** concatenate the strings: "yob", year & ".txt" as they have no separators
-```{r, eval=FALSE}
+
+```r
 read_year_data <- function(year) {
   data <- read_csv(paste0("yob", year, ".txt"), col_names = c("Name", "Sex", "Count"))
 }
@@ -140,7 +224,8 @@ read_year_data <- function(year) {
 
 **switch**
 In this code chunk, 
-```{r, eval=FALSE}
+
+```r
 selected_data <- 
 switch(input$proportion_per_sex,
        "Male" = filtered_proportion_m_df,
@@ -158,7 +243,8 @@ combined_name_trend_df <- do.call(rbind, name_trend_list) Combine name_trend_lis
 The first error I faced was when I used a “for loop” that loops through each dataframe for the years 1882 to 2022, and merges the names that are given to both male and female babies. However, when I tried to access the output outside the loop, I was returned “Error: object 'gender_neutral_names' not found”.
 
 To overcome this error, I went back to lecture 6 about “for loops” and recalled that we had to pre-allocate space to store the output. I then corrected the code by adding 
-```{r, eval =FALSE}
+
+```r
 gender_neutral_names <- vector("list", length =1882:2022)
 ```
 before the loop.
@@ -177,7 +263,8 @@ To overcome this challenge, I went online to search for how to reference to colu
 
 For my first visualisation, I tried to plot a barplot of the proportion of gender-neutral names given to babies per year using 
 
-```{r, eval=FALSE}
+
+```r
 ggplot(gender_neutral_names) +
       aes(x = year, y = proportion) +
       geom_bar() 
@@ -190,7 +277,8 @@ I also included radio buttons (none/male/female/both) that fill this gender-neut
 
 I initially tried to do this by binding these 3 dataframes together using rbind, and then write a code using ifelse, something like 
 
-```{r, eval=FALSE}
+
+```r
 if(input$proportion_per_sex=female) {
 plot<-ggplot(total_proportion)+
 aes(x=year, y=proportion, fill=female_proportion)
@@ -206,7 +294,8 @@ but this doesn't work since female_proportion and male_proportion are separate c
 
 Instead, I googled if it was possible to layer multiple ggplots in the same plot using eg 
 
-```{r, eval=FALSE}
+
+```r
 ggplot() + 
 geom_col(data = total_proportion) + aes(x = year, y = proportion) + 
 geom_col(data = male_proportion) + aes(x = year, y = proportion) + 
@@ -218,14 +307,16 @@ For my second visualisation, I had 2 navigation buttons in the side panel that d
 My original code was interval_end <<- interval_end + 50. However, the plot is empty when I rendered it. 
 
 Thus, for this visualisation to work effectively, I created three functions, one to store the interval end, one to store the cumulative end, and another one to accumulate the years.
-```{r, eval=FALSE}
+
+```r
 interval_end <- reactiveVal(1882)
 cumulative_end <- reactiveVal(1882))
 new_cumulative_end <- cumulative_end() + 50
 ```
 
 I also faced another challenge for this plot. Even if a name only has records starting from a specific year that is not 1882 (for instance, 1960), the plot does not start the line from 1960 but instead extends the line back 1882, which would otherwise erroneously imply the name's existence before it was actually established. Also, the colour aesthetic for the plot gets mixed up. For instance, if a name only has records for male babies in the 1960s, the plot displays a pink line to represent this trend. However, when there are records for both sexes in the later years, say 1980, the plot displays 2 lines, but now the male line is blue while the female line is pink. Hence, I included a code chunk to add two rows to the dataframe (one for each sex), setting the proportion to 0 when the year is 1882. 
-```{r, eval=FALSE}
+
+```r
 filtered_df <- filtered_df %>%
    bind_rows(
     data.frame(Name = selected_name, Year = 1882, Sex = "M", Proportion = 0),
